@@ -1,0 +1,9 @@
+{
+  "pack": {
+    "description": "Color Challenge",
+    "pack_format": ${pack_format},
+    "min_format": ${pack_format},
+    "max_format": ${pack_format_max},
+    "supported_formats": [${pack_format}, ${pack_format_max}]
+  }
+}

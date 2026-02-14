@@ -1,0 +1,22 @@
+{
+  "itemGroup.colorchallenge": "Color Challenge",
+  "item.colorchallenge.instructions": "Instructions",
+  "block.colorchallenge.game_start_block": "Game Start Block",
+  "block.colorchallenge.game_reset_block": "Game Reset Block",
+  "message.colorchallenge.game_started": "Start!",
+  "message.colorchallenge.already_in_progress": "The game is already in progress.",
+  "message.colorchallenge.countdown_in_progress": "The game is about to start.",
+  "message.colorchallenge.game_ended_reset_required": "The game has ended. Please reset to start a new game.",
+  "message.colorchallenge.game_not_started": "The game has not started yet.",
+  "message.colorchallenge.game_reset": "The game has been reset.",
+  "message.colorchallenge.confirm_reset": "Click again within 5 seconds to confirm reset.",
+  "entity.colorchallenge.staff": "Staff",
+  "message.colorchallenge.hold_dye": "Please hold a dye to deliver.",
+  "message.colorchallenge.already_delivered": "%s has already been delivered.",
+  "message.colorchallenge.winner_title": "Game Over!",
+  "message.colorchallenge.winner_subtitle": "%s wins!",
+  "message.colorchallenge.goal_reached_title": "Goal Reached!",
+  "message.colorchallenge.goal_reached_subtitle": "%s reached the goal!",
+  "hud.colorchallenge.market_marker": "Delivery Area",
+  "screen.colorchallenge.delivery_status": "Delivery Status"
+}

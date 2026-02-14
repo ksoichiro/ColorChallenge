@@ -1,0 +1,22 @@
+{
+  "itemGroup.colorchallenge": "カラーチャレンジ",
+  "item.colorchallenge.instructions": "説明書",
+  "block.colorchallenge.game_start_block": "ゲーム開始ブロック",
+  "block.colorchallenge.game_reset_block": "ゲームリセットブロック",
+  "message.colorchallenge.game_started": "スタート！",
+  "message.colorchallenge.already_in_progress": "ゲームはすでに進行中です。",
+  "message.colorchallenge.countdown_in_progress": "まもなくゲームが開始します。",
+  "message.colorchallenge.game_ended_reset_required": "ゲームは終了しています。リセットして新しいゲームを開始してください。",
+  "message.colorchallenge.game_not_started": "ゲームがまだ開始されていません。",
+  "message.colorchallenge.game_reset": "ゲームがリセットされました。",
+  "message.colorchallenge.confirm_reset": "リセットするには5秒以内にもう一度クリックしてください。",
+  "entity.colorchallenge.staff": "スタッフ",
+  "message.colorchallenge.hold_dye": "納品する染料を手に持ってください。",
+  "message.colorchallenge.already_delivered": "%s はすでに納品済みです。",
+  "message.colorchallenge.winner_title": "ゲーム終了！",
+  "message.colorchallenge.winner_subtitle": "%s の勝利！",
+  "message.colorchallenge.goal_reached_title": "目標達成！",
+  "message.colorchallenge.goal_reached_subtitle": "%s が目標達成！",
+  "hud.colorchallenge.market_marker": "デリバリーエリア",
+  "screen.colorchallenge.delivery_status": "納品状況"
+}

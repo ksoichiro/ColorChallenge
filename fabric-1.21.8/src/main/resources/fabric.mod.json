@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "colorchallenge",
+  "version": "${version}",
+  "name": "Color Challenge",
+  "description": "Compete to earn 10,000 gold by mining and selling ores!",
+  "authors": [
+    "ksoichiro"
+  ],
+  "contact": {
+    "homepage": "https://github.com/ksoichiro/ColorChallenge",
+    "sources": "https://github.com/ksoichiro/ColorChallenge"
+  },
+  "license": "LGPL-3.0-only",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.colorchallenge.fabric.ColorChallengeFabric"
+    ],
+    "client": [
+      "com.colorchallenge.fabric.client.ColorChallengeFabricClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "fabric-api": "*",
+    "architectury": ">=17.0.0"
+  }
+}
