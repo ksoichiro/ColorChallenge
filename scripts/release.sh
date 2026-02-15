@@ -2,7 +2,7 @@
 
 # --- Project-specific settings ---
 MOD_ID="colorchallenge"
-MODRINTH_PROJECT_ID="TODO"
+MODRINTH_PROJECT_ID="9ZyU6iON"
 PROJECT_NAME="Color Challenge"
 # Modrinth project IDs for dependencies
 DEP_ARCHITECTURY="lhGA9TYQ"
