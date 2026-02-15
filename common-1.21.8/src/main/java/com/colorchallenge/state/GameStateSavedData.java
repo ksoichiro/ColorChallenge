@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -19,6 +20,7 @@ public class GameStateSavedData extends SavedData {
     GameState state = GameState.NOT_STARTED;
     final Map<UUID, Set<DyeColor>> deliveredDyes = new HashMap<>();
     final List<FinishedPlayer> finishedPlayers = new ArrayList<>();
+    final Set<UUID> knownPlayers = new HashSet<>();
     int playTime = 0;
     boolean marketGenerated = false;
 
@@ -34,7 +36,9 @@ public class GameStateSavedData extends SavedData {
                         return map;
                     }),
             FinishedPlayer.CODEC.listOf().optionalFieldOf("finishedPlayers", List.of())
-                    .forGetter(d -> d.finishedPlayers)
+                    .forGetter(d -> d.finishedPlayers),
+            Codec.STRING.listOf().optionalFieldOf("knownPlayers", List.of())
+                    .forGetter(d -> d.knownPlayers.stream().map(UUID::toString).collect(Collectors.toList()))
     ).apply(instance, GameStateSavedData::fromCodec));
 
     public GameStateSavedData() {
@@ -42,7 +46,8 @@ public class GameStateSavedData extends SavedData {
 
     private static GameStateSavedData fromCodec(int stateOrdinal, int playTime, boolean marketGenerated,
                                                 Map<String, java.util.stream.IntStream> dyesMap,
-                                                List<FinishedPlayer> finishedPlayers) {
+                                                List<FinishedPlayer> finishedPlayers,
+                                                List<String> knownPlayersList) {
         GameStateSavedData data = new GameStateSavedData();
         data.state = GameState.values()[stateOrdinal];
         data.playTime = playTime;
@@ -58,6 +63,7 @@ public class GameStateSavedData extends SavedData {
             data.deliveredDyes.put(uuid, colors);
         });
         data.finishedPlayers.addAll(finishedPlayers);
+        knownPlayersList.forEach(uuidStr -> data.knownPlayers.add(UUID.fromString(uuidStr)));
         return data;
     }
 }

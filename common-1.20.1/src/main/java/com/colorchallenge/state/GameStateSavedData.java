@@ -7,6 +7,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -16,6 +17,7 @@ public class GameStateSavedData extends SavedData {
     GameState state = GameState.NOT_STARTED;
     final Map<UUID, Set<DyeColor>> deliveredDyes = new HashMap<>();
     final List<FinishedPlayer> finishedPlayers = new ArrayList<>();
+    final Set<UUID> knownPlayers = new HashSet<>();
     int playTime = 0;
     boolean marketGenerated = false;
 
@@ -39,6 +41,13 @@ public class GameStateSavedData extends SavedData {
                     }
                 }
                 data.deliveredDyes.put(uuid, colors);
+            }
+        }
+        if (tag.contains("knownPlayers")) {
+            CompoundTag knownTag = tag.getCompound("knownPlayers");
+            int knownCount = knownTag.getInt("count");
+            for (int i = 0; i < knownCount; i++) {
+                data.knownPlayers.add(UUID.fromString(knownTag.getString("uuid_" + i)));
             }
         }
         if (tag.contains("finishedPlayers")) {
@@ -77,6 +86,13 @@ public class GameStateSavedData extends SavedData {
             finishedTag.put("entry_" + i, entry);
         }
         tag.put("finishedPlayers", finishedTag);
+        CompoundTag knownTag = new CompoundTag();
+        knownTag.putInt("count", knownPlayers.size());
+        int ki = 0;
+        for (UUID uuid : knownPlayers) {
+            knownTag.putString("uuid_" + ki++, uuid.toString());
+        }
+        tag.put("knownPlayers", knownTag);
         return tag;
     }
 }

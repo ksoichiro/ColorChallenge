@@ -86,6 +86,7 @@ public class GameStateManager {
         savedData.playTime = 0;
         savedData.deliveredDyes.clear();
         savedData.finishedPlayers.clear();
+        savedData.knownPlayers.clear();
         countdownTicks = -1;
         savedData.setDirty();
     }
@@ -234,6 +235,17 @@ public class GameStateManager {
 
     public void setMarketGenerated() {
         savedData.marketGenerated = true;
+        savedData.setDirty();
+    }
+
+    // Known players tracking
+
+    public boolean isKnownPlayer(UUID playerId) {
+        return savedData.knownPlayers.contains(playerId);
+    }
+
+    public void markPlayerKnown(UUID playerId) {
+        savedData.knownPlayers.add(playerId);
         savedData.setDirty();
     }
 

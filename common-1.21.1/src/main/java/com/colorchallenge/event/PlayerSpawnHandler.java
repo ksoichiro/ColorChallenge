@@ -1,6 +1,7 @@
 package com.colorchallenge.event;
 
 import com.colorchallenge.registry.ModItems;
+import com.colorchallenge.state.GameStateManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,7 +24,11 @@ public class PlayerSpawnHandler {
     }
 
     public static void onPlayerJoin(ServerPlayer player) {
-        teleportToWorldSpawn(player);
+        GameStateManager gsm = GameStateManager.getInstance();
+        if (gsm != null && !gsm.isKnownPlayer(player.getUUID())) {
+            teleportToWorldSpawn(player);
+            gsm.markPlayerKnown(player.getUUID());
+        }
         grantEquipment(player);
         applyNightVision(player);
     }
