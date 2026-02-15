@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "colorchallenge:block/game_reset_block"
+    }
+  }
+}
