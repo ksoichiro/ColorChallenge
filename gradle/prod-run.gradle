@@ -438,7 +438,6 @@ if (project.name == 'fabric') {
 
     dependencies {
         prodMods "net.fabricmc.fabric-api:fabric-api:${project.ext.fabric_api_version}"
-        prodMods "dev.architectury:architectury-fabric:${project.ext.architectury_api_version}"
     }
 
     // --- Task: downloadFabricLoader ---
@@ -568,7 +567,6 @@ if (project.name == 'neoforge') {
     }
 
     dependencies {
-        prodMods "dev.architectury:architectury-neoforge:${project.ext.architectury_api_version}"
     }
 
     def neoforgeVersion = project.ext.neoforge_version
@@ -748,7 +746,6 @@ if (project.name == 'forge') {
     }
 
     dependencies {
-        prodMods "dev.architectury:architectury-forge:${project.ext.architectury_api_version}"
     }
 
     def forgeVersion = project.ext.forge_version

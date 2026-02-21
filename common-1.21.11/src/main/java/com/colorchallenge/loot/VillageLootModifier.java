@@ -1,26 +1,25 @@
 package com.colorchallenge.loot;
 
-import dev.architectury.event.events.common.LootEvent;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 public class VillageLootModifier {
-    public static void register() {
-        LootEvent.MODIFY_LOOT_TABLE.register((key, context, builtin) -> {
-            String path = key.identifier().getPath();
-            if (!path.startsWith("chests/village/")) return;
+    public static void modifyLootTable(ResourceKey<LootTable> key, LootTable.Builder tableBuilder) {
+        String path = key.identifier().getPath();
+        if (!path.startsWith("chests/village/")) return;
 
-            context.addPool(LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
-                    .add(LootItem.lootTableItem(Items.JUNGLE_SAPLING)));
-            context.addPool(LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
-                    .add(LootItem.lootTableItem(Items.CACTUS)));
-            context.addPool(LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
-                    .add(LootItem.lootTableItem(Items.SEA_PICKLE)));
-        });
+        tableBuilder.withPool(LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(Items.JUNGLE_SAPLING)));
+        tableBuilder.withPool(LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(Items.CACTUS)));
+        tableBuilder.withPool(LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(Items.SEA_PICKLE)));
     }
 }
