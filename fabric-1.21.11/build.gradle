@@ -68,10 +68,16 @@ processResources {
     from(project(commonModule).sourceSets.main.resources)
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-    inputs.property 'version', project.version
+    def expandProps = [
+        'version': project.version,
+        'fabric_loader_version': project.ext.fabric_loader_version,
+        'minecraft_version': project.ext.minecraft_version,
+        'java_version': project.ext.java_version,
+    ]
+    expandProps.each { key, value -> inputs.property key, value }
 
     filesMatching('fabric.mod.json') {
-        expand 'version': project.version
+        expand expandProps
     }
 }
 
