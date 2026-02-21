@@ -18,26 +18,26 @@ Race to collect and deliver all 16 dye colors to the staff NPC — the first pla
 
 ## Supported Versions
 
-| Minecraft | Mod Loader | Dependencies |
-|-----------|-----------|--------------|
-| 1.21.9 | Fabric Loader 0.18.4+ with Fabric API 0.134.1+1.21.9 | Architectury API 18.0.3+ |
-| 1.21.9 | NeoForge 21.9.16-beta+ | Architectury API 18.0.3+ |
-| 1.21.8 | Fabric Loader 0.18.4+ with Fabric API 0.136.0+1.21.8 | Architectury API 17.0.8+ |
-| 1.21.8 | NeoForge 21.8.52+ | Architectury API 17.0.8+ |
-| 1.21.7 | Fabric Loader 0.18.4+ with Fabric API 0.129.0+1.21.7 | Architectury API 17.0.8+ |
-| 1.21.7 | NeoForge 21.7.25-beta+ | Architectury API 17.0.8+ |
-| 1.21.6 | Fabric Loader 0.18.4+ with Fabric API 0.128.2+1.21.6 | Architectury API 17.0.6+ |
-| 1.21.6 | NeoForge 21.6.20-beta+ | Architectury API 17.0.6+ |
-| 1.21.5 | Fabric Loader 0.18.4+ with Fabric API 0.126.0+1.21.5 | Architectury API 16.1.4+ |
-| 1.21.5 | NeoForge 21.5.96+ | Architectury API 16.1.4+ |
-| 1.21.4 | Fabric Loader 0.18.4+ with Fabric API 0.119.3+1.21.4 | Architectury API 15.0.3+ |
-| 1.21.4 | NeoForge 21.4.156+ | Architectury API 15.0.3+ |
-| 1.21.3 | Fabric Loader 0.16.10+ with Fabric API 0.107.3+1.21.3 | Architectury API 14.0.4+ |
-| 1.21.3 | NeoForge 21.3.95+ | Architectury API 14.0.4+ |
-| 1.21.1 | Fabric Loader 0.17.3+ with Fabric API 0.116.7+1.21.1 | Architectury API 13.0.8+ |
-| 1.21.1 | NeoForge 21.1.209+ | Architectury API 13.0.8+ |
-| 1.20.1 | Fabric Loader 0.16.10+ with Fabric API 0.92.2+1.20.1 | Architectury API 9.2.14+ |
-| 1.20.1 | Forge 47.3.0+ | Architectury API 9.2.14+ |
+| Minecraft | Mod Loader |
+|-----------|-----------|
+| 1.21.9 | Fabric Loader 0.18.4+ with Fabric API 0.134.1+1.21.9 |
+| 1.21.9 | NeoForge 21.9.16-beta+ |
+| 1.21.8 | Fabric Loader 0.18.4+ with Fabric API 0.136.0+1.21.8 |
+| 1.21.8 | NeoForge 21.8.52+ |
+| 1.21.7 | Fabric Loader 0.18.4+ with Fabric API 0.129.0+1.21.7 |
+| 1.21.7 | NeoForge 21.7.25-beta+ |
+| 1.21.6 | Fabric Loader 0.18.4+ with Fabric API 0.128.2+1.21.6 |
+| 1.21.6 | NeoForge 21.6.20-beta+ |
+| 1.21.5 | Fabric Loader 0.18.4+ with Fabric API 0.126.0+1.21.5 |
+| 1.21.5 | NeoForge 21.5.96+ |
+| 1.21.4 | Fabric Loader 0.18.4+ with Fabric API 0.119.3+1.21.4 |
+| 1.21.4 | NeoForge 21.4.156+ |
+| 1.21.3 | Fabric Loader 0.16.10+ with Fabric API 0.107.3+1.21.3 |
+| 1.21.3 | NeoForge 21.3.95+ |
+| 1.21.1 | Fabric Loader 0.17.3+ with Fabric API 0.116.7+1.21.1 |
+| 1.21.1 | NeoForge 21.1.209+ |
+| 1.20.1 | Fabric Loader 0.16.10+ with Fabric API 0.92.2+1.20.1 |
+| 1.20.1 | Forge 47.3.0+ |
 
 ## Requirements
 
@@ -46,9 +46,6 @@ Race to collect and deliver all 16 dye colors to the staff NPC — the first pla
 - **Mod Loader** (choose one):
   - **1.21.1–1.21.9**: Fabric with Fabric API, or NeoForge
   - **1.20.1**: Fabric with Fabric API, or Forge
-- **Dependencies**:
-  - Architectury API (see Supported Versions table for version requirements)
-
 ### For Developers
 - **Java Development Kit (JDK)**: 21 for 1.21.1+, 17 for 1.20.1 (auto-downloaded by toolchain)
 - **IDE**: IntelliJ IDEA (recommended) or Eclipse
@@ -102,7 +99,7 @@ cd ColorChallenge
 
 1. Install the desired Minecraft version
 2. Install a supported mod loader (see [Supported Versions](#supported-versions) for details)
-3. Download and install the required Fabric API (Fabric only) and Architectury API
+3. Download and install the required Fabric API (Fabric only)
 4. Copy the corresponding Color Challenge JAR to `.minecraft/mods/` folder
 5. Launch Minecraft with the mod loader profile
 
@@ -141,7 +138,7 @@ See the [COPYING](COPYING) and [COPYING.LESSER](COPYING.LESSER) files for full l
 
 ## Credits
 
-- Built with [Architectury](https://github.com/architectury/architectury-api)
+- Built with [Architectury Loom](https://github.com/architectury/architectury-loom)
 
 ## Support
 
