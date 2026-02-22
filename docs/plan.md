@@ -41,7 +41,7 @@ Based on the MinersMarket codebase (mine ores, sell to NPC, race to 10,000 gold)
 Remove MinersMarket-specific systems and prepare the foundation for Color Challenge.
 
 - [x] 1-1. Delete `PriceList.java`
-  - `common-shared/src/main/java/com/colorchallenge/trade/PriceList.java`
+  - `common/shared/src/main/java/com/colorchallenge/trade/PriceList.java`
   - Delete the entire `trade` package
 - [x] 1-2. Remove price fluctuation event system from `GameStateManager`
   - Remove all price event related fields and methods
@@ -255,22 +255,22 @@ Order enabling incremental testing:
 ## File Change Summary
 
 ### Files to Delete
-- `common-shared/src/main/java/com/colorchallenge/trade/PriceList.java`
-- `common-1.21.1/src/main/resources/assets/colorchallenge/textures/gui/coin.png`
+- `common/shared/src/main/java/com/colorchallenge/trade/PriceList.java`
+- `common/1.21.1/src/main/resources/assets/colorchallenge/textures/gui/coin.png`
 - Miner's Pickaxe related files (model, texture) if they exist
 
 ### Files with Major Changes
-- `common-1.21.1/src/main/java/com/colorchallenge/state/GameStateManager.java` — sales → dyes
-- `common-1.21.1/src/main/java/com/colorchallenge/state/GameStateSavedData.java` — persistence
-- `common-shared/src/main/java/com/colorchallenge/state/ClientGameState.java` — client cache
-- `common-1.21.1/src/main/java/com/colorchallenge/network/GameStateSyncPacket.java` — sync data
-- `common-1.21.1/src/main/java/com/colorchallenge/entity/StaffEntity.java` — interaction
-- `common-1.21.1/src/main/java/com/colorchallenge/hud/GameHudOverlay.java` — display
-- `common-1.21.1/src/main/java/com/colorchallenge/event/PlayerSpawnHandler.java` — equipment
-- `common-1.21.1/src/main/java/com/colorchallenge/registry/ModItems.java` — items
-- `common-1.21.1/src/main/java/com/colorchallenge/structure/DeliveryAreaGenerator.java` — chest
-- `common-1.21.1/src/main/resources/assets/colorchallenge/lang/en_us.json`
-- `common-1.21.1/src/main/resources/assets/colorchallenge/lang/ja_jp.json`
+- `common/1.21.1/src/main/java/com/colorchallenge/state/GameStateManager.java` — sales → dyes
+- `common/1.21.1/src/main/java/com/colorchallenge/state/GameStateSavedData.java` — persistence
+- `common/shared/src/main/java/com/colorchallenge/state/ClientGameState.java` — client cache
+- `common/1.21.1/src/main/java/com/colorchallenge/network/GameStateSyncPacket.java` — sync data
+- `common/1.21.1/src/main/java/com/colorchallenge/entity/StaffEntity.java` — interaction
+- `common/1.21.1/src/main/java/com/colorchallenge/hud/GameHudOverlay.java` — display
+- `common/1.21.1/src/main/java/com/colorchallenge/event/PlayerSpawnHandler.java` — equipment
+- `common/1.21.1/src/main/java/com/colorchallenge/registry/ModItems.java` — items
+- `common/1.21.1/src/main/java/com/colorchallenge/structure/DeliveryAreaGenerator.java` — chest
+- `common/1.21.1/src/main/resources/assets/colorchallenge/lang/en_us.json`
+- `common/1.21.1/src/main/resources/assets/colorchallenge/lang/ja_jp.json`
 
 ### New Files to Create
 - Instructions item class (`item/InstructionsItem.java` etc.)
@@ -279,8 +279,8 @@ Order enabling incremental testing:
 - Wandering Trader trade extension handler (Phase 9)
 
 ### Minor Changes
-- `common-shared/src/main/java/com/colorchallenge/registry/ModCreativeTab.java` — rename
-- `common-shared/src/main/java/com/colorchallenge/event/GameTickHandler.java` — remove price event references
-- `common-1.21.1/src/main/java/com/colorchallenge/ColorChallenge.java` — remove price event initialization
-- `common-1.21.1/src/main/java/com/colorchallenge/block/GameStartBlock.java` — no change or minor
-- `common-1.21.1/src/main/java/com/colorchallenge/block/GameResetBlock.java` — no change or minor
+- `common/shared/src/main/java/com/colorchallenge/registry/ModCreativeTab.java` — rename
+- `common/shared/src/main/java/com/colorchallenge/event/GameTickHandler.java` — remove price event references
+- `common/1.21.1/src/main/java/com/colorchallenge/ColorChallenge.java` — remove price event initialization
+- `common/1.21.1/src/main/java/com/colorchallenge/block/GameStartBlock.java` — no change or minor
+- `common/1.21.1/src/main/java/com/colorchallenge/block/GameResetBlock.java` — no change or minor

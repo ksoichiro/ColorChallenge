@@ -127,18 +127,18 @@ To address this, the following systems make discovery easier and keep the game f
 
 ## Directory structure
 
-- common-shared
+- common/shared
     - Common code without loader dependencies or version dependencies. Not a Gradle subproject, but incorporated as one of the srcDirs from each version-specific subproject
-- common-1.21.1
-    - Common code for Minecraft 1.21.1 without loader dependencies. Gradle subproject.
-- fabric-base
-    - Code for Fabric without Minecraft version dependencies. Gradle subproject.
-- fabric-1.21.1
-    - Code for Fabric and Minecraft 1.21.1. Gradle subproject. Depends on fabric-base.
-- neoforge-base
-    - Code for NeoForge without Minecraft version dependencies. Gradle subproject.
-- neoforge-1.21.1
-    - Code for NeoForge and Minecraft 1.21.1. Gradle subproject. Depends on neoforge-base.
+- common/<version>
+    - Common code for each Minecraft version without loader dependencies. Gradle subproject `:common`.
+- fabric/base
+    - Code for Fabric without Minecraft version dependencies. Not a Gradle subproject.
+- fabric/<version>
+    - Code for Fabric and each Minecraft version. Gradle subproject `:fabric`. Depends on fabric/base.
+- neoforge/base
+    - Code for NeoForge without Minecraft version dependencies. Not a Gradle subproject.
+- neoforge/<version>
+    - Code for NeoForge and each Minecraft version. Gradle subproject `:neoforge`. Depends on neoforge/base.
 
 ## License
 
