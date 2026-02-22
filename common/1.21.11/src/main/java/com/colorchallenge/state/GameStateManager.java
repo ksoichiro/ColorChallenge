@@ -1,6 +1,7 @@
 package com.colorchallenge.state;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
@@ -138,9 +139,11 @@ public class GameStateManager {
             broadcastTitle(Component.literal(String.valueOf(secondsLeft)), 0, 25, 0);
         } else if (countdownTicks == 0) {
             broadcastTitle(
-                    Component.translatable("message.colorchallenge.game_started"),
+                    Component.translatable("message.colorchallenge.game_started")
+                            .withStyle(style -> style.withColor(ChatFormatting.GOLD).withBold(true)),
                     0, 40, 10
             );
+            broadcastSound(SoundEvents.ANVIL_PLACE);
             start();
         }
         countdownTicks--;
@@ -161,6 +164,16 @@ public class GameStateManager {
             player.connection.send(new ClientboundSetTitlesAnimationPacket(fadeIn, stay, fadeOut));
             player.connection.send(new ClientboundSetTitleTextPacket(title));
             player.connection.send(new ClientboundSetSubtitleTextPacket(subtitle));
+        }
+    }
+
+    private void broadcastSound(net.minecraft.sounds.SoundEvent sound) {
+        if (serverLevel == null || serverLevel.getServer() == null) return;
+        for (ServerPlayer player : serverLevel.getServer().getPlayerList().getPlayers()) {
+            player.connection.send(new ClientboundSoundPacket(
+                    BuiltInRegistries.SOUND_EVENT.wrapAsHolder(sound),
+                    SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(),
+                    1.0f, 1.0f, player.level().random.nextLong()));
         }
     }
 
